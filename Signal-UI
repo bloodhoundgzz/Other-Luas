@@ -1,5 +1,3 @@
--- written by vozoid | just a backup file incase of deletion
-
 local newInstance = Instance.new
 local setmetatable = setmetatable
 

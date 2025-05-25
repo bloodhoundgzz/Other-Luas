@@ -1,6 +1,5 @@
 local global = {}
 
--- Environment check
 cloneref 		= cloneref or function(service) return service end
 identifyexecutor	= identifyexecutor or function() return "Unidentified" end
 
@@ -18,7 +17,6 @@ delfolder 		= assert(delfolder, `[WARN] { identifyexecutor() } Executor incompat
 
 gethui			= gethui or function() return global.core end
 
--- Custom function
 global.tbl = function(...) 
 	return {...} 
 end
@@ -152,7 +150,6 @@ global.length = function(dict, key)
 	return length
 end
 
--- Service
 global.repstorage = global.service "ReplicatedStorage"
 global.userinput = global.service "UserInputService"
 global.content = global.service "ContentProvider"
@@ -164,19 +161,15 @@ global.core = global.service "CoreGui"
 
 global.hui = gethui()
 
--- Instances
 global.client = global.plrs.LocalPlayer
 global.plrgui = global.client.PlayerGui
 global.camera = workspace.CurrentCamera
 
--- Modules
 global.require = require
 
--- Type convert
 global.str = tostring
 global.num = tonumber
 
--- Thread
 global.pcall = pcall
 global.wcall = task.delay
 global.call = task.spawn
@@ -184,11 +177,9 @@ global.call = task.spawn
 global.wait = task.wait
 global.tick = os.clock
 
--- Type check
 global.is = type
 global.isa = typeof
 
--- Table
 global.catenate = table.concat
 global.remove = table.remove
 global.insert = table.insert
@@ -196,7 +187,6 @@ global.unpack = table.unpack
 global.tfind = table.find
 global.sort = table.sort
 
--- String
 global.format = string.format
 global.match = string.match
 global.upper = string.upper
@@ -206,20 +196,17 @@ global.gsub = string.gsub
 global.sub = string.sub
 global.slen = string.len
 
--- Meta-table
 global.setmeta = setmetatable
 global.getmeta = getmetatable
 
 global.valget = rawget
 global.valset = rawset
 
--- Math
 global.max = math.max
 global.min = math.min
 global.clamp = math.clamp
 global.approx = math.round
 
--- Data-type
 global.hsv = Color3.fromHSV
 global.hex = Color3.fromHex
 global.rgb = Color3.fromRGB

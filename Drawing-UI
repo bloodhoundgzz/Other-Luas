@@ -1,15 +1,12 @@
---// not made by me
-
-
 local coreGui = game:GetService("CoreGui")
--- objects
+
 local camera = workspace.CurrentCamera
 local drawingUI = Instance.new("ScreenGui")
 drawingUI.Name = "Drawing"
 drawingUI.IgnoreGuiInset = true
 drawingUI.DisplayOrder = 0x7fffffff
 drawingUI.Parent = coreGui
--- variables
+
 local drawingIndex = 0
 local uiStrokes = table.create(0)
 local baseDrawingObj = setmetatable({
@@ -39,7 +36,7 @@ local drawingFontsEnum = {
 	[2] = Font.fromEnum(Enum.Font.SourceSans),
 	[3] = Font.fromEnum(Enum.Font.RobotoMono)
 }
--- function
+
 local function getFontFromIndex(fontIndex)
 	return drawingFontsEnum[fontIndex]
 end
@@ -47,7 +44,7 @@ end
 local function convertTransparency(transparency)
 	return math.clamp(1 - transparency, 0, 1)
 end
--- main
+
 local DrawingLib = {}
 DrawingLib.Fonts = {
 	["UI"] = 0,
@@ -377,8 +374,7 @@ function DrawingLib.new(drawingType)
 				if typeof(imageObj[index]) == "nil" then return end
 
 				if index == "Data" then
-					-- later
-				elseif index == "DataURL" then -- temporary property
+				elseif index == "DataURL" then
 					imageFrame.Image = value
 				elseif index == "Size" then
 					imageFrame.Size = UDim2.fromOffset(value.X, value.Y)
@@ -403,7 +399,7 @@ function DrawingLib.new(drawingType)
 						return imageObj:Remove()
 					end
 				elseif index == "Data" then
-					return nil -- TODO: add error here
+					return nil
 				end
 				return imageObj[index]
 			end,
@@ -445,7 +441,6 @@ function DrawingLib.new(drawingType)
 						linePoint[index] = value
 					end
 				elseif index == "Filled" then
-					-- later
 				end
 				quadObj[index] = value
 			end,
@@ -496,7 +491,6 @@ function DrawingLib.new(drawingType)
 						linePoint[index] = value
 					end
 				elseif index == "Filled" then
-					-- later
 				end
 				triangleObj[index] = value
 			end,
